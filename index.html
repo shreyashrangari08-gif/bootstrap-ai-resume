@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shreyash - Professional Resume Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Custom Styling for Resume Landing Page */
+        .resume-hero {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            color: white;
+            padding: 60px 0;
+        }
+        .skill-badge {
+            background-color: #e2e8f0;
+            color: #1e293b;
+            font-weight: 600;
+            margin: 5px;
+            display: inline-block;
+            padding: 8px 15px;
+            border-radius: 20px;
+        }
+        #resume-bot-output {
+            height: 160px;
+            overflow-y: auto;
+            background-color: #1e293b;
+            color: #f8fafc;
+        }
+    </style>
+</head>
+<body>
+
+    <section class="resume-hero text-center">
+        <div class="container">
+            <h1 class="display-5 fw-bold">Shreyash Rangari</h1>
+            <p class="lead text-info">Full Stack Developer Intern</p>
+            <p class="mx-auto" style="max-width: 600px;">Passionate developer skilled in building responsive user interfaces and integrating intelligent systems.</p>
+        </div>
+    </section>
+
+    <div class="container my-5">
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="card shadow-sm p-4 h-100 border-0 bg-light">
+                    <h3 class="fw-bold text-primary mb-3">🎓 Education</h3>
+                    <h5>Bachelor of Engineering / Technology</h5>
+                    <p class="text-muted">Computer Science & Engineering | 2023 - 2027</p>
+                    <hr>
+                    <h3 class="fw-bold text-primary mb-3">🛠️ Technical Skills</h3>
+                    <div>
+                        <span class="skill-badge">HTML5</span>
+                        <span class="skill-badge">CSS3</span>
+                        <span class="skill-badge">JavaScript</span>
+                        <span class="skill-badge">Bootstrap 5</span>
+                        <span class="skill-badge">Git & GitHub</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card shadow-sm p-4 h-100 border-0 bg-light">
+                    <h3 class="fw-bold text-primary mb-3">💼 Key Projects</h3>
+                    <div class="mb-3">
+                        <h5>1. AI-Powered Educational Landing Page</h5>
+                        <p class="text-muted m-0">Built a responsive web layout using Bootstrap 5 with an active JavaScript client-side AI chatbot tool.</p>
+                    </div>
+                    <div>
+                        <h5>2. Dynamic Interactive Resume</h5>
+                        <p class="text-muted m-0">Designed a landing-page style personal resume including custom CSS styling and an integrated smart evaluator bot.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="bg-dark text-white py-5">
+        <div class="container" style="max-width: 600px;">
+            <div class="card border-0 bg-secondary shadow-lg">
+                <div class="card-header bg-primary text-white py-3 text-center">
+                    <h5 class="mb-0 fw-bold">🤖 Interactive Resume AI Assistant</h5>
+                </div>
+                <div class="card-body bg-dark text-white">
+                    <div id="resume-bot-output" class="p-3 border border-secondary rounded mb-3">
+                        <p class="text-muted m-0">AI: Ask me about Shreyash's 'skills', 'projects', or 'contact' details!</p>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" id="bot-input" class="form-control bg-secondary text-white border-0" placeholder="Type 'skills' or 'projects'...">
+                        <button class="btn btn-primary fw-bold" onclick="askResumeAI()">Ask AI</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        function askResumeAI() {
+            let input = document.getElementById('bot-input').value.toLowerCase().trim();
+            let output = document.getElementById('resume-bot-output');
+            
+            if(input === "") return;
+
+            output.innerHTML += `<p class="mb-2 text-warning"><strong>You:</strong> ${input}</p>`;
+            let response = "AI: Try asking about 'skills', 'projects', or 'contact' to test my validation logic.";
+            
+            if(input.includes('skill')) {
+                response = "AI: Shreyash is proficient in Frontend Web Technologies like HTML5, CSS3, JavaScript, and Bootstrap 5 Framework.";
+            } else if(input.includes('project')) {
+                response = "AI: He has recently built an AI Learning Landing Page and this Interactive Digital Resume!";
+            } else if(input.includes('contact') || input.includes('mail')) {
+                response = "AI: You can check his full profile and code directly on this verified GitHub account!";
+            }
+
+            setTimeout(() => {
+                output.innerHTML += `<p class="text-info mb-2"><strong>${response}</strong></p>`;
+                output.scrollTop = output.scrollHeight;
+            }, 300);
+
+            document.getElementById('bot-input').value = "";
+        }
+    </script>
+</body>
+</html>
