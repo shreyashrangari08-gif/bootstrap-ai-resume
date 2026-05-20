@@ -6,11 +6,21 @@
     <title>Shreyash - Professional Resume Page</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        /* Custom Styling for Resume Landing Page */
         .resume-hero {
             background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
             color: white;
-            padding: 60px 0;
+            padding: 50px 0;
+        }
+        .profile-img-container {
+            position: relative;
+            display: inline-block;
+        }
+        .profile-img {
+            width: 130px;
+            height: 130px;
+            object-fit: cover;
+            border: 4px solid #3b82f6;
+            background-color: #cbd5e1;
         }
         .skill-badge {
             background-color: #e2e8f0;
@@ -33,6 +43,15 @@
 
     <section class="resume-hero text-center">
         <div class="container">
+            <div class="profile-img-container mb-3">
+                <img id="resume-avatar" src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" class="rounded-circle profile-img shadow" alt="Profile Image">
+            </div>
+            
+            <div class="mx-auto mb-3" style="max-width: 300px;">
+                <label for="imageLoader" class="btn btn-outline-info btn-sm fw-bold">📁 Upload Profile Photo</label>
+                <input type="file" id="imageLoader" accept="image/*" style="display: none;" onchange="previewImage(event)">
+            </div>
+
             <h1 class="display-5 fw-bold">Shreyash Rangari</h1>
             <p class="lead text-info">Full Stack Developer Intern</p>
             <p class="mx-auto" style="max-width: 600px;">Passionate developer skilled in building responsive user interfaces and integrating intelligent systems.</p>
@@ -96,6 +115,17 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
+        // JS Function to handle Image Upload and Update Avatar dynamically
+        function previewImage(event) {
+            let reader = new FileReader();
+            reader.onload = function() {
+                let output = document.getElementById('resume-avatar');
+                output.src = reader.result;
+            }
+            reader.readAsDataURL(event.target.files[0]);
+        }
+
+        // Chatbot Logic
         function askResumeAI() {
             let input = document.getElementById('bot-input').value.toLowerCase().trim();
             let output = document.getElementById('resume-bot-output');
