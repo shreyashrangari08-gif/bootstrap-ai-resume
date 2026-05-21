@@ -3,249 +3,305 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shreyash - Premium Professional AI Resume</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Shreyash Rangari - Resume</title>
     <style>
-        body {
-            background-color: #f1f5f9;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: #334155;
         }
-        /* Left Sidebar Custom Style */
-        .sidebar {
-            background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
-            color: white;
-            min-height: 100%;
-            border-radius: 16px 0 0 16px;
-            padding: 40px 30px;
+
+        body {
+            background-color: #f4f6f9;
+            display: flex;
+            justify-content: center;
+            padding: 40px 20px;
         }
-        /* Right Content Area */
-        .content-area {
-            background: white;
-            border-radius: 0 16px 16px 0;
-            padding: 40px;
+
+        .resume-container {
+            width: 850px;
+            background: #ffffff;
+            display: flex;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            min-height: 1100px;
         }
-        /* Main Wrapper Card */
-        .resume-card {
-            border: none;
-            border-radius: 16px;
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+
+        /* Left Column Style */
+        .left-column {
+            width: 35%;
+            background-color: #e3effd;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-right: 2px solid #cbd5e1;
         }
-        /* Profile Image Preview Box */
-        #photo-preview {
+
+        .profile-container {
+            position: relative;
+            margin-bottom: 25px;
+        }
+
+        .profile-img {
             width: 140px;
             height: 140px;
             border-radius: 50%;
+            border: 4px solid #1e3a8a;
             object-fit: cover;
-            border: 4px solid #38bdf8;
-            background-color: #334155;
-            display: inline-block;
+            background-color: #fff;
         }
-        .section-title {
-            border-bottom: 2px solid #e2e8f0;
-            padding-bottom: 8px;
-            margin-bottom: 20px;
+
+        .name {
+            font-size: 24px;
+            color: #1e3a8a;
             font-weight: 700;
-            color: #0f172a;
+            text-align: center;
+            margin-bottom: 5px;
+        }
+
+        .title {
+            font-size: 14px;
+            color: #2563eb;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 25px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
-        .sidebar .section-title {
-            color: #38bdf8;
-            border-bottom: 2px solid #334155;
+
+        .contact-info {
+            width: 100%;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #cbd5e1;
+            padding-bottom: 15px;
         }
-        .progress {
-            height: 8px;
-            background-color: #334155;
+
+        .contact-item {
+            font-size: 12.5px;
+            color: #334155;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
-        .progress-bar {
-            background-color: #38bdf8;
+
+        .contact-item a {
+            color: #334155;
+            text-decoration: none;
         }
-        .chat-container {
-            max-width: 100%;
+
+        .contact-item a:hover {
+            color: #2563eb;
         }
-        #chat-output {
-            height: 150px;
-            overflow-y: auto;
+
+        .sidebar-section {
+            width: 100%;
+        }
+
+        .sidebar-title {
+            font-size: 15px;
+            color: #1e3a8a;
+            border-bottom: 2px solid #1e3a8a;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        .skill-group {
+            margin-bottom: 18px;
+        }
+
+        .skill-group-title {
+            font-size: 13px;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 8px;
+        }
+
+        .pill-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .pill {
+            background: #ffffff;
+            border: 1px solid #3b82f6;
+            color: #2563eb;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 11.5px;
+            font-weight: 500;
+        }
+
+        /* Right Column Style */
+        .right-column {
+            width: 65%;
+            padding: 40px 35px;
+        }
+
+        .section {
+            margin-bottom: 35px;
+        }
+
+        .section-title {
+            font-size: 17px;
+            color: #1e3a8a;
+            border-bottom: 2px solid #3b82f6;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .objective-box {
             background-color: #f8fafc;
-            font-size: 14px;
+            border-left: 4px solid #2563eb;
+            padding: 18px;
+            border-radius: 0 6px 6px 0;
+        }
+
+        .objective-text {
+            font-size: 13.5px;
+            color: #334155;
+            line-height: 1.6;
+            text-align: justify;
+        }
+
+        .edu-item {
+            margin-bottom: 20px;
+            position: relative;
+            padding-left: 15px;
+            border-left: 2px solid #e2e8f0;
+        }
+
+        .edu-item::before {
+            content: '';
+            position: absolute;
+            left: -5px;
+            top: 5px;
+            width: 8px;
+            height: 8px;
+            background-color: #2563eb;
+            border-radius: 50%;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 4px;
+        }
+
+        .item-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: #1e293b;
+        }
+
+        .item-date {
+            font-size: 12.5px;
+            color: #64748b;
+            font-weight: 600;
+        }
+
+        .item-details {
+            font-size: 13px;
+            color: #475569;
+            line-height: 1.5;
         }
     </style>
 </head>
-<body class="py-5">
+<body>
 
-    <div class="container my-4">
-        <div class="card resume-card">
-            <div class="row g-0">
-                
-                <div class="col-lg-4 sidebar">
-                    <div class="text-center mb-4">
-                        <div class="position-relative d-inline-block mb-3">
-                            <img id="photo-preview" src="https://via.placeholder.com/140" alt="Profile Photo">
-                        </div>
-                        <h3 class="fw-bold m-0 text-white">Shreyash Rangari</h3>
-                        <p class="text-info small fw-semibold tracking-wider text-uppercase">Web Developer & Programmer</p>
-                        
-                        <div class="mt-2">
-                            <label for="image-upload" class="btn btn-outline-info btn-sm fw-bold px-3">
-                                📁 Upload Photo
-                            </label>
-                            <input type="file" id="image-upload" accept="image/*" class="d-none" onchange="previewImage(event)">
-                        </div>
-                    </div>
-
-                    <div class="mt-5">
-                        <h5 class="section-title fs-6">Contact Info</h5>
-                        <ul class="list-unstyled text-light opacity-75 small">
-                            <li class="mb-2">📍 Maharashtra, India</li>
-                            <li class="mb-2">📧 shreyash@example.com</li>
-                            <li class="mb-2">🌐 github.com/shreyashrangari08-gif</li>
-                        </ul>
-                    </div>
-
-                    <div class="mt-5">
-                        <h5 class="section-title fs-6">Technical Skills</h5>
-                        
-                        <div class="mb-3">
-                            <div class="d-flex justify-content-between small mb-1">
-                                <span>HTML5 & CSS3</span>
-                                <span class="text-info">90%</span>
-                            </div>
-                            <div class="progress"><div class="progress-bar" style="width: 90%"></div></div>
-                        </div>
-
-                        <div class="mb-3">
-                            <div class="d-flex justify-content-between small mb-1">
-                                <span>Bootstrap 5 Framework</span>
-                                <span class="text-info">85%</span>
-                            </div>
-                            <div class="progress"><div class="progress-bar" style="width: 85%"></div></div>
-                        </div>
-
-                        <div class="mb-3">
-                            <div class="d-flex justify-content-between small mb-1">
-                                <span>JavaScript (DOM & Logic)</span>
-                                <span class="text-info">75%</span>
-                            </div>
-                            <div class="progress"><div class="progress-bar" style="width: 75%"></div></div>
-                        </div>
-
-                        <div class="mb-3">
-                            <div class="d-flex justify-content-between small mb-1">
-                                <span>Git & GitHub Clouds</span>
-                                <span class="text-info">80%</span>
-                             </div>
-                            <div class="progress"><div class="progress-bar" style="width: 80%"></div></div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-8 content-area">
-                    
-                    <div class="mb-5">
-                        <h4 class="section-title"><span class="text-primary">#</span> Professional Objective</h4>
-                        <p class="text-muted">A highly motivated and detail-oriented Computer Science student aiming to leverage strong responsive design practices, client-side web automation, and framework layout management skills to deliver high-quality production applications.</p>
-                    </div>
-
-                    <div class="mb-5">
-                        <h4 class="section-title"><span class="text-primary">#</span> Academic Background</h4>
-                        <div class="mb-3">
-                            <div class="d-flex justify-content-between align-items-center">
-                                <h6 class="fw-bold text-dark m-0">Bachelor of Computer Science / Applications</h6>
-                                <span class="badge bg-secondary">2023 - Present</span>
-                            </div>
-                            <p class="text-muted small m-0">University / College Department Tracks</p>
-                        </div>
-                    </div>
-
-                    <div class="mb-5">
-                        <h4 class="section-title"><span class="text-primary">#</span> Live Academic Projects</h4>
-                        
-                        <div class="mb-4">
-                            <div class="d-flex justify-content-between align-items-center">
-                                <h6 class="fw-bold text-primary m-0">🤖 Advanced AI Powered Learning Landing Page</h6>
-                                <span class="badge bg-success">Live</span>
-                            </div>
-                            <p class="text-muted small my-1">Built using Bootstrap 5 fluid grid architecture, custom CSS animations, and interactive JavaScript evaluation engine tracks.</p>
-                            <small class="text-secondary fw-semibold">Key Features: Responsive UI, Collapsible Accordion FAQs, Live AI Knowledge Simulator Box.</small>
-                        </div>
-
-                        <div class="mb-4">
-                            <div class="d-flex justify-content-between align-items-center">
-                                <h6 class="fw-bold text-primary m-0">📋 Dynamic Two-Column AI Resume System</h6>
-                                <span class="badge bg-success">Live</span>
-                            </div>
-                            <p class="text-muted small my-1">Engineered a highly responsive digital portfolio incorporating client-side photo processing and interactive automated assistance.</p>
-                            <small class="text-secondary fw-semibold">Key Features: Dynamic FileReader API, Embedded Async AI Response Engine.</small>
-                        </div>
-                    </div>
-
-                    <div class="mt-5 pt-3">
-                        <div class="card border border-primary shadow-sm">
-                            <div class="card-header bg-primary text-white py-2">
-                                <h6 class="mb-0 fw-bold">🤖 Resume Interactive AI Assistant</h6>
-                            </div>
-                            <div class="card-body p-3">
-                                <div id="chat-output" class="p-2 border rounded mb-2">
-                                    <p class="text-muted m-0 small">AI: Hello! Type 'skills', 'projects', or 'help' to query Shreyash's resume data instantly.</p>
-                                </div>
-                                <div class="input-group input-group-sm">
-                                    <input type="text" id="user-input" class="form-control" placeholder="Ask about skills or projects...">
-                                    <button class="btn btn-primary fw-bold" onclick="askAI()">Query</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
+    <div class="resume-container">
+        <div class="left-column">
+            <div class="profile-container">
+                <img class="profile-img" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/72x72/1f468-200d-1f4bb.png" alt="Shreyash Rangari">
             </div>
+            
+            <div class="name">Shreyash Rangari</div>
+            <div class="title">AI Engineering Enthusiast</div>
+            
+            <div class="contact-info">
+                <div class="contact-item">📞 +91 9699343711</div>
+                <div class="contact-item">✉️ <a href="mailto:shreyashrangari08@gmail.com">shreyashrangari08@gmail.com</a></div>
+                <div class="contact-item">📍 Maharashtra, India</div>
+                <div class="contact-item">💼 <a href="https://linkedin.com/in/shreyashrangari" target="_blank">linkedin.com/in/shreyashrangari</a></div>
+                <div class="contact-item">🐙 <a href="https://GitHub.com/shreyashRangari" target="_blank">GitHub.com/shreyashRangari</a></div>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-title">Technical Skills</div>
+                
+                <div class="skill-group">
+                    <div class="skill-group-title">Programming</div>
+                    <div class="pill-container">
+                        <span class="pill">Python</span>
+                        <span class="pill">C</span>
+                        <span class="pill">C++</span>
+                        <span class="pill">SQL</span>
+                    </div>
+                </div>
+
+                <div class="skill-group">
+                    <div class="skill-group-title">AI & ML</div>
+                    <div class="pill-container">
+                        <span class="pill">Machine Learning</span>
+                        <span class="pill">Data Analysis</span>
+                        <span class="pill">Deep Learning</span>
+                    </div>
+                </div>
+
+                <div class="skill-group">
+                    <div class="skill-group-title">Tools</div>
+                    <div class="pill-container">
+                        <span class="pill">TensorFlow</span>
+                        <span class="pill">Git</span>
+                        <span class="pill">Power BI</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="right-column">
+            
+            <div class="section">
+                <div class="section-title">Career Objective</div>
+                <div class="objective-box">
+                    <p class="objective-text">
+                        A highly motivated and detail-oriented technical enthusiast passionate about Artificial Intelligence and its real-world applications. Committed to leveraging a strong foundation in data analysis and machine learning to build intelligent systems that drive innovation and efficiency. Eager to contribute to forward-thinking projects while continuing to expand expertise in AI engineering, neural networks, and problem-solving within the tech industry.
+                    </p>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="section-title">Education</div>
+                
+                <div class="edu-item">
+                    <div class="item-header">
+                        <span class="item-title">HSC (Senior Secondary)</span>
+                        <span class="item-date">2022 - 2023 | 51%</span>
+                    </div>
+                    <div class="item-details">Science Stream | Maharashtra State Board</div>
+                </div>
+
+                <div class="edu-item">
+                    <div class="item-header">
+                        <span class="item-title">SSC (Secondary)</span>
+                        <span class="item-date">2020 - 2021 | 71%</span>
+                    </div>
+                    <div class="item-details">Husnoor Convent School</div>
+                </div>
+            </div>
+
         </div>
     </div>
 
-    <footer class="text-center text-muted small mt-5">
-        <p>&copy; 2026 Shreyash Rangari. Built Strictly via Bootstrap 5 UI Framework Grid Sheet.</p>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-    <script>
-        // 1. Photo Upload Logic
-        function previewImage(event) {
-            let reader = new FileReader();
-            reader.onload = function() {
-                let output = document.getElementById('photo-preview');
-                output.src = reader.result;
-            }
-            if(event.target.files[0]) {
-                reader.readAsDataURL(event.target.files[0]);
-            }
-        }
-
-        // 2. Automated AI Assistant Logic
-        function askAI() {
-            let input = document.getElementById('user-input').value.toLowerCase().trim();
-            let output = document.getElementById('chat-output');
-            if(input === "") return;
-
-            output.innerHTML += `<p class="mb-1 text-dark"><strong>You:</strong> ${input}</p>`;
-            let response = "AI: Query unmatched. Try typing 'skills', 'projects', or 'help'.";
-
-            if(input.includes('skill') || input.includes('tech')) {
-                response = "AI: Shreyash is proficient in HTML5, CSS3, Bootstrap 5 Layout Grids, and Client-Side JavaScript Logic Flow.";
-            } else if(input.includes('project') || input.includes('work')) {
-                response = "AI: Core tracks include the Responsive Landing Page with Accordions and this Interactive Sidebar Resume Platform.";
-            } else if(input.includes('help') || input.includes('info')) {
-                response = "AI: This interface combines FileReader API image upload alongside structural Bootstrap columns.";
-            }
-
-            setTimeout(() => {
-                output.innerHTML += `<p class="text-primary mb-1"><strong>${response}</strong></p>`;
-                output.scrollTop = output.scrollHeight;
-            }, 250);
-
-            document.getElementById('user-input').value = "";
-        }
-    </script>
 </body>
 </html>
